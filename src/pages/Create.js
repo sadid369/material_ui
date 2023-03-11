@@ -16,17 +16,17 @@ import {
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 // import { makeStyles } from "@mui/styles";
 // import { styled } from "@mui/system";
-import { makeStyles } from "@mui/styles";
-const useStyles = makeStyles({
-  field: {
-    marginTop: 20,
-    marginBottom: 20,
-    display: "block",
-  },
-});
+// import { makeStyles } from "@mui/styles";
+// const useStyles = makeStyles({
+//   field: {
+//     marginTop: 20,
+//     marginBottom: 20,
+//     display: "block",
+//   },
+// });
 
 function Create() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const history = useNavigate();
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
@@ -73,6 +73,7 @@ function Create() {
           required
           margin={`normal`}
           error={titleError}
+          sx={{ marginTop: 2, marginBottom: 2, display: "block" }}
         />
         <TextField
           onChange={(e) => setDetails(e.target.value)}
@@ -85,20 +86,19 @@ function Create() {
           required
           margin={`normal`}
           error={detailsError}
-          className={classes.field}
+          sx={{ marginTop: 2, marginBottom: 2, display: "block" }}
+          // className={classes.field}
         />
         <Box
           sx={{
             display: "flex",
             alignItems: "flex-start",
             flexDirection: "column",
-            p: 1,
-            m: 1,
             bgcolor: "background.paper",
             borderRadius: 1,
           }}
         >
-          <FormControl className={classes.field}>
+          <FormControl>
             <FormLabel>Note Category</FormLabel>
             <RadioGroup
               value={category}
